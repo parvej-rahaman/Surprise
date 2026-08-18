@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Confetti Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Hearts -->
+    <div id="hearts-container"></div>
+
+    <!-- Step 1: Envelope -->
+    <section id="step-1" class="step active">
+        <div class="envelope-container" onclick="handleEnvelopeClick()">
+            <div class="envelope">
+                <div class="flap"></div>
+                <div class="letter">
+                    <p>Long Distance Birthday gift from your Coder Husband😁</p>
+                </div>
+            </div>
+            <p class="instruction-text">You have a letter... tap to open</p>
+        </div>
+    </section>
+
+    <!-- Step 2: Cake -->
+    <section id="step-2" class="step hidden">
+        <div class="cake-container" onclick="cutCake()">
+            <div class="cake">
+                <!-- Left Half -->
+                <div class="cake-half left">
+                    <div class="tier tier-top"></div>
+                    <div class="tier tier-middle"></div>
+                    <div class="tier tier-bottom"></div>
+                </div>
+                <!-- Right Half -->
+                <div class="cake-half right">
+                    <div class="tier tier-top"></div>
+                    <div class="tier tier-middle"></div>
+                    <div class="tier tier-bottom"></div>
+                </div>
+                <div class="candle">
+                    <div class="flame"></div>
+                </div>
+            </div>
+            <p class="instruction-text" id="cake-text">Tap the cake to cut it & blow the candles!</p>
+            <button id="cake-continue" class="btn hidden" onclick="goToStep(3)" style="opacity: 0; visibility: hidden; transition: opacity 0.5s">Continue</button>
+        </div>
+    </section>
+
+    <!-- Step 3: Hero Section -->
+    <section id="step-3" class="step hidden">
+        <div class="hero-container">
+            <div class="photo-frame">
+                <!-- UPDATE: Path to her photo -->
+                <img src="assets/her_photo.jpg" alt="Her Photo">
+            </div>
+            <div class="wish-card glass-card">
+                <!-- UPDATE: Her Name -->
+                <h1>Happy Birthday, Munu! 🎉✨</h1>
+                <p>Wishing you a day filled with love, laughter, and all the beautiful things you deserve.</p>
+            </div>
+            <button class="btn btn-primary" onclick="goToStep(4)">View Our Memories</button>
+        </div>
+    </section>
+
+    <!-- Step 4 & 5: Memories and Finale -->
+    <section id="step-4" class="step hidden scrollable">
+        <div class="memories-header">
+            <h2>Our Beautiful Moments</h2>
+        </div>
+        <div class="memories-grid">
+            <!-- Memory 1 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory1.jpg" alt="Memory 1"></div>
+                    <div class="card-back glass-card"><p>Remember this photo😁you will remember when I saw this pic I said you "Akdom ghorer bou lagche."🙈</p></div>
+                </div>
+            </div>
+            <!-- Memory 2 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory2.jpg" alt="Memory 2"></div>
+                    <div class="card-back glass-card"><p>First Saree surrise from you❤️That day also special to me that was the first date after many ups and downs.🫂</p></div>
+                </div>
+            </div>
+            <!-- Memory 3 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory3.jpg" alt="Memory 3"></div>
+                    <div class="card-back glass-card"><p>Our first vacation together❤️ you looks stunning that day!!!🌚🌚</p></div>
+                </div>
+            </div>
+            <!-- Memory 4 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory4.jpg" alt="Memory 4"></div>
+                    <div class="card-back glass-card"><p>The next day I had my Computer Networks exam and Madam bring Fried Rice and chicken for me. Sudhu ami onekdin valo kichu khaini bole🥹</p></div>
+                </div>
+            </div>
+            <!-- Memory 5 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory5.jpg" alt="Memory 5"></div>
+                    <div class="card-back glass-card"><p>Making sign that he is mine...😌</p></div>
+                </div>
+            </div>
+            <!-- Memory 6 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory6.jpg" alt="Memory 6"></div>
+                    <div class="card-back glass-card"><p>When you became child with me! Spiderman Brand New Day Movie Date🕷️🕸️</p></div>
+                </div>
+            </div>
+            <!-- Memory 7 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory7.jpg" alt="Memory 7"></div>
+                    <div class="card-back glass-card"><p>Our second vacation at Henry Island❤️ did you remember the evening gossip at the seasore😉</p></div>
+                </div>
+            </div>
+            <!-- Memory 8 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory8.jpg" alt="Memory 8"></div>
+                    <div class="card-back glass-card"><p>What can I say about this I just want to say 1200 rupees I think you got it😂😂But the cozy moments we spent that was priceless❤️</p></div>
+                </div>
+            </div>
+            <!-- Memory 9 -->
+            <div class="memory-card" onclick="this.classList.toggle('flipped')">
+                <div class="card-inner">
+                    <div class="card-front"><img src="assets/memory9.jpg" alt="Memory 9"></div>
+                    <div class="card-back glass-card"><p>This is our recent memory The Heritage Cafe Serampore, There also you make wrong choice...Pan fried momo😂😂😂</p></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 5: Grand Finale -->
+        <div class="finale-section glass-card">
+            <h2>These were very few memories but entire life is there to making many more memories together.</h2>
+            <p>I love you infinity Mamma! ❤️</p>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
